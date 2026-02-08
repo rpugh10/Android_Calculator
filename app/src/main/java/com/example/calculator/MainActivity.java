@@ -17,10 +17,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    Button btn;
-    TextView textView1;
-    TextView textView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,19 +28,5 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        btn = findViewById(R.id.calculateButton);
-        textView1 = findViewById(R.id.firstNum);
-        textView2 = findViewById(R.id.secondNum);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int a = Integer.parseInt(textView1.getText().toString());
-                int b = Integer.parseInt(textView2.getText().toString());
-                int sum = a + b;
-                Toast.makeText(MainActivity.this, "Result is =" + sum,Toast.LENGTH_LONG).show();
-            }
-        });
-        Log.i(TAG, "Application started successfully");
     }
 }

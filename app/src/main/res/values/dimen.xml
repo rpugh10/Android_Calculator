@@ -4,4 +4,6 @@ To reference in Java use R.dimen.dimension_name
 In XML @[package:]dimen/dimension_name<-->
 <resources>
     <dimen name="button_height">58dp</dimen>
+    <dimen name="titleMargin">70dp</dimen>
+    <dimen name="inputMargin">20dp</dimen>
 </resources>
