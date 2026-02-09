@@ -17,6 +17,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
     EditText transport;
     EditText hotels;
@@ -47,12 +49,14 @@ public class MainActivity extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int t = Integer.parseInt(transport.getText().toString());
-                int h = Integer.parseInt(hotels.getText().toString());
-                int m = Integer.parseInt(meals.getText().toString());
-                int a = Integer.parseInt(act.getText().toString());
-                int sum = t + h + m + a;
-                total.setText("" + sum);
+                double t = Double.parseDouble(transport.getText().toString());
+                double h = Double.parseDouble(hotels.getText().toString());
+                double m = Double.parseDouble(meals.getText().toString());
+                double a = Double.parseDouble(act.getText().toString());
+                double sum = t + h + m + a;
+                DecimalFormat format = new DecimalFormat("0.00");
+                String formattedValue = format.format(sum);
+                total.setText("" + formattedValue);
             }
         });
     }
